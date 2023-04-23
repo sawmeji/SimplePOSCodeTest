@@ -1,0 +1,37 @@
+<widget-top-page title="Shop Item" icon="bi-tags">
+
+    <div actions>
+        <a (click)="addNewItem()" class="btn btn-outline-primary">
+            <i class="bi bi-plus-lg me-1"></i> Add New
+        </a>
+    </div>
+
+    <div class="row row-cols-3 g-3 mt-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of shopList">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td><a (click)="addSellItem(item.id)" class="btn btn-outline-dark">Sell</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <widget-modal-dialog modalId="shopItem" [title]="'Add New Item'">
+        <app-shop-item-save [formData]="targetData" (saveListener)="save($event)"></app-shop-item-save>
+    </widget-modal-dialog>
+
+
+
+</widget-top-page>

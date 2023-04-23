@@ -1,0 +1,58 @@
+<widget-top-page title="Sell Item" icon="bi-tags">
+
+    <div class="row row-cols-3 g-3 mt-2 align-item-center">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let item of sellList">
+                    <td>{{item.id}}</td>
+                    <td>{{item.shopItem.name}}</td>
+                    <td>{{item.shopItem.price}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th>Total Price</th>
+                    <th>{{totalPrice}}</th>
+                </tr>
+            </tfoot>
+        </table>
+
+    </div>
+
+    <div class="row row-cols-3 g-3 mt-2">
+        <h3>Best Seller</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let best of bestSeller">
+                    <td>{{best.id}}</td>
+                    <td>{{best.name}}</td>
+                    <td>{{best.price}}</td>
+                    <td>{{best.count}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+
+</widget-top-page>

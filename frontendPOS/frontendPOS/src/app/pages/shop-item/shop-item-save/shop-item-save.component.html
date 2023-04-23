@@ -1,0 +1,17 @@
+<form #form="ngForm" (ngSubmit)="save()">
+
+    <widget-item-form label="Name">
+        <input type="text" #name="ngModel" [(ngModel)]="formData.name" name="name" placeholder="Enter Name" required
+            class="form-control">
+    </widget-item-form>
+
+    <widget-item-form label="Price">
+        <input type="text" #burmese="ngModel" [(ngModel)]="formData.price" name="price" placeholder="Enter Price"
+            required class="form-control">
+    </widget-item-form>
+
+    <button [disabled]="form.invalid" type="submit" class="btn btn-outline-danger">
+        <i class="bi bi-save me-2"></i> Save
+    </button>
+
+</form>
