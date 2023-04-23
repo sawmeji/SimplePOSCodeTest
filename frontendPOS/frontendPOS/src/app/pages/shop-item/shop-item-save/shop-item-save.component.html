@@ -6,8 +6,8 @@
     </widget-item-form>
 
     <widget-item-form label="Price">
-        <input type="text" #burmese="ngModel" [(ngModel)]="formData.price" name="price" placeholder="Enter Price"
-            required class="form-control">
+        <input type="text" #price="ngModel" [(ngModel)]="formData.price" name="price" placeholder="Enter Price" required
+            class="form-control">
     </widget-item-form>
 
     <button [disabled]="form.invalid" type="submit" class="btn btn-outline-danger">
